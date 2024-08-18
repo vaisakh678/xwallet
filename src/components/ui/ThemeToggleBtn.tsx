@@ -1,0 +1,25 @@
+import React from "react";
+import { FaMoon } from "react-icons/fa";
+import { FiSun } from "react-icons/fi";
+import { useTheme } from "../../contexts/ThemeProvider";
+
+const ThemeToggleBtn: React.FC = () => {
+	const { setTheme, theme } = useTheme();
+	const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+
+	const mode = theme === "system" ? systemTheme : theme;
+
+	return (
+		<button
+			className="p-4 absolute top-0 right-0"
+			onClick={() => {
+				setTheme(mode === "dark" ? "light" : "dark");
+			}}
+		>
+			{mode === "dark" ? <FiSun /> : <FaMoon />}
+		</button>
+	);
+};
+
+export default ThemeToggleBtn;
+
