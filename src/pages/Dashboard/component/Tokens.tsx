@@ -28,15 +28,86 @@ const Tokens: React.FC = () => {
 				</Button>
 			</section>
 			<section className="my-8 w-full flex flex-col gap-2">
-				<TokenItem />
-				<TokenItem />
-				<TokenItem />
-				<TokenItem />
-				<TokenItem />
-				<TokenItem />
-				<TokenItem />
-				<TokenItem />
-				<TokenItem />
+				<TokenItem
+					image="https://s3.amazonaws.com/app-assets.xnfts.dev/images/network-logo-replacement-solana.png"
+					id="none"
+					name="Solana"
+					current_price={21.0}
+					price_change_percentage_24h={23}
+					symbol="Sol"
+				/>
+				<TokenItem
+					image="https://s3.amazonaws.com/app-assets.xnfts.dev/images/network-logo-replacement-solana.png"
+					id="none"
+					name="Solana"
+					current_price={21.0}
+					price_change_percentage_24h={23}
+					symbol="Sol"
+				/>
+				<TokenItem
+					image="https://s3.amazonaws.com/app-assets.xnfts.dev/images/network-logo-replacement-solana.png"
+					id="none"
+					name="Solana"
+					current_price={21.0}
+					price_change_percentage_24h={23}
+					symbol="Sol"
+				/>
+				<TokenItem
+					image="https://s3.amazonaws.com/app-assets.xnfts.dev/images/network-logo-replacement-solana.png"
+					id="none"
+					name="Solana"
+					current_price={21.0}
+					price_change_percentage_24h={23}
+					symbol="Sol"
+				/>
+				<TokenItem
+					image="https://s3.amazonaws.com/app-assets.xnfts.dev/images/network-logo-replacement-solana.png"
+					id="none"
+					name="Solana"
+					current_price={21.0}
+					price_change_percentage_24h={23}
+					symbol="Sol"
+				/>
+				<TokenItem
+					image="https://s3.amazonaws.com/app-assets.xnfts.dev/images/network-logo-replacement-solana.png"
+					id="none"
+					name="Solana"
+					current_price={21.0}
+					price_change_percentage_24h={23}
+					symbol="Sol"
+				/>
+				<TokenItem
+					image="https://s3.amazonaws.com/app-assets.xnfts.dev/images/network-logo-replacement-solana.png"
+					id="none"
+					name="Solana"
+					current_price={21.0}
+					price_change_percentage_24h={23}
+					symbol="Sol"
+				/>
+				<TokenItem
+					image="https://s3.amazonaws.com/app-assets.xnfts.dev/images/network-logo-replacement-solana.png"
+					id="none"
+					name="Solana"
+					current_price={21.0}
+					price_change_percentage_24h={23}
+					symbol="Sol"
+				/>
+				<TokenItem
+					image="https://s3.amazonaws.com/app-assets.xnfts.dev/images/network-logo-replacement-solana.png"
+					id="none"
+					name="Solana"
+					current_price={21.0}
+					price_change_percentage_24h={23}
+					symbol="Sol"
+				/>
+				<TokenItem
+					image="https://s3.amazonaws.com/app-assets.xnfts.dev/images/network-logo-replacement-solana.png"
+					id="none"
+					name="Solana"
+					current_price={21.0}
+					price_change_percentage_24h={23}
+					symbol="Sol"
+				/>
 			</section>
 		</>
 	);

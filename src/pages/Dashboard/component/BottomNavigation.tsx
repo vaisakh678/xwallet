@@ -9,7 +9,7 @@ const BottomNavigation: React.FC = () => {
 	return (
 		<div className="flex items-center justify-center mt-[60px]">
 			<div
-				className="w-full max-w-[800px] box-content h-[60px] grid grid-rows-1 grid-cols-4 fixed bottom-0 z-10 backdrop:blur-[10px] bg-[#FFFFFFCC] dark:bg-[#0000007D] px-5"
+				className="w-full max-w-[800px] box-content h-[60px] grid grid-rows-1 grid-cols-4 fixed bottom-0 z-10 backdrop:blur-[10px] bg-[#FFFFFFCC] dark:bg-[#08080a7D] px-5"
 				style={{
 					backdropFilter: "blur(10px)",
 					WebkitBackdropFilter: "blur(10px)", // For Safari compatibility
