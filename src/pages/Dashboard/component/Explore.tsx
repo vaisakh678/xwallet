@@ -26,29 +26,21 @@ const Explore: React.FC = () => {
 		(async () => {
 			setIsLoading(true);
 			try {
-				const res = await fetch(
+				const res1 = await fetch(
 					"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=percent_change_24h_desc&per_page=10&page=1&x_cg_demo_api_key=CG-jw27LheqpPDo5R2mJ7pwWqyW"
 				);
-				const json = await res.json();
-				if (res.ok) {
-					setGainers(json);
-				} else {
-					console.log(res);
-				}
-				const res1 = await fetch(
+				const res2 = await fetch(
 					"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&x_cg_demo_api_key=CG-jw27LheqpPDo5R2mJ7pwWqyW"
 				);
-				const json2 = await res1.json();
-				if (res.ok) {
-					setAssets(json2);
-				} else {
-					console.log(res);
-					toast({
-						variant: "destructive",
-						title: "Uh oh! Something went wrong.",
-						description: "There was a problem with your request.",
-					});
-				}
+
+				const json1 = await res1.json();
+				const json2 = await res2.json();
+
+				if (res1.ok) setGainers(json1);
+				else console.log(res1);
+
+				if (res2.ok) setAssets(json2);
+				else console.log(res2);
 			} catch (error) {
 				console.log(error);
 				toast({

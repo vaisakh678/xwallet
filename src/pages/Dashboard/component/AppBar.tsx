@@ -3,7 +3,6 @@ import ThemeToggleBtn from "../../../components/ui/ThemeToggleBtn";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
 	DropdownMenu,
-	DropdownMenuCheckboxItem,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	// DropdownMenuLabel,
@@ -11,6 +10,7 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Separator } from "../../../components/ui/separator";
+import { Link } from "react-router-dom";
 
 const AppBar: React.FC = () => {
 	return (
@@ -31,9 +31,6 @@ const AppBar: React.FC = () => {
 						</DropdownMenuTrigger>
 						<DropdownMenuContent className="m-4">
 							<DropdownMenuItem>Account 1</DropdownMenuItem>
-							<DropdownMenuCheckboxItem checked={true} onCheckedChange={() => {}}>
-								Account 1
-							</DropdownMenuCheckboxItem>
 							<DropdownMenuSeparator />
 							<DropdownMenuItem>Account 2</DropdownMenuItem>
 							<DropdownMenuItem>Settings</DropdownMenuItem>
@@ -42,7 +39,9 @@ const AppBar: React.FC = () => {
 					</DropdownMenu>
 				</div>
 				<div className="flex justify-center items-center">
-					<h1 className="text-2xl font-semibold">XWallet</h1>
+					<Link to="/">
+						<h1 className="text-2xl font-semibold">XWallet</h1>
+					</Link>
 					<Separator className="h-8 mx-4" orientation="vertical" />
 					<h3>Sol</h3>
 				</div>
