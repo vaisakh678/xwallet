@@ -26,7 +26,7 @@ const SelectNetwork: React.FC = () => {
 					</div>
 				</ScrollArea>
 			</section>
-			<Button variant="default" onClick={() => navigate("/mnemonic")}>
+			<Button variant="default" onClick={() => navigate("/setup/mnemonic")}>
 				Continue
 			</Button>
 		</>

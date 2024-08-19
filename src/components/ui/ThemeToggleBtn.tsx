@@ -11,7 +11,6 @@ const ThemeToggleBtn: React.FC = () => {
 
 	return (
 		<button
-			className="p-4 absolute top-0 right-0"
 			onClick={() => {
 				setTheme(mode === "dark" ? "light" : "dark");
 			}}

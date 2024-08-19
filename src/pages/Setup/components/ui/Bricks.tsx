@@ -1,17 +1,12 @@
 import React from "react";
 
 interface BricksProps {
-	active?: boolean;
 	filled?: boolean;
 }
 
-const Bricks: React.FC<BricksProps> = ({ active, filled }) => {
+const Bricks: React.FC<BricksProps> = ({ filled }) => {
 	return (
-		<div
-			className={`flex-1 flex items-center justify-center group-hover:opacity-100 transition-all duration-200 ${
-				active ? "opacity-100" : "opacity-30"
-			}`}
-		>
+		<div className={`flex-1 flex items-center justify-center`}>
 			<div className="gap-2 grid grid-cols-4 grid-rows-3">
 				{Array(12)
 					.fill(0)

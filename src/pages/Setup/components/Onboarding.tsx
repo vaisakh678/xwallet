@@ -17,12 +17,12 @@ const Onboarding: React.FC = () => {
 				<OnboardingBtn onClick={() => setOpt(0)} active={opt === 0}>
 					<p className="text-lg">Create </p>
 					<p className="text-sm">Wallet </p>
-					<Bricks filled active={opt === 0} />
+					<Bricks filled />
 				</OnboardingBtn>
 				<OnboardingBtn onClick={() => setOpt(1)} active={opt === 1}>
 					<p className="text-lg">Import </p>
 					<p className="text-sm">Wallet </p>
-					<Bricks active={opt === 1} />
+					<Bricks />
 				</OnboardingBtn>
 			</section>
 			<Button variant="default" onClick={() => navigate("network")}>

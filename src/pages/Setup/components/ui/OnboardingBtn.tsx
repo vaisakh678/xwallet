@@ -9,8 +9,8 @@ interface OnboardingBtnProps {
 const OnboardingBtn: React.FC<OnboardingBtnProps> = ({ children, onClick, active }) => {
 	return (
 		<div
-			className={`cursor-pointer flex flex-col group p-4 w-36 h-40 border border-gray-500 rounded-md transition-all duration-200 hover:border-opacity-100  ${
-				active ? "border-opacity-60" : "border-opacity-25"
+			className={`cursor-pointer flex flex-col group p-4 w-36 h-40 border border-gray-500 rounded-md transition-all hover:opacity-100 duration-200 ${
+				active ? "opacity-80" : "opacity-40"
 			}`}
 			onClick={onClick}
 		>
