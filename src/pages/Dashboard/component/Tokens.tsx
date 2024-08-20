@@ -17,15 +17,24 @@ const Tokens: React.FC = () => {
 				<h3 className="text-muted-foreground text-lg">$0.00 0%</h3>
 			</section>
 			<section className="gap-5 flex">
-				<Button variant="outline" className="h-10 w-10 p-0 rounded-full">
-					<IoIosArrowRoundUp className="w-5 h-5" />
-				</Button>
-				<Button variant="outline" className="h-10 w-10 p-0 rounded-full" onClick={() => navigate("/receive")}>
-					<IoIosArrowRoundDown className="w-5 h-5" />
-				</Button>
-				<Button variant="outline" className="h-10 w-10 p-0 rounded-full" onClick={() => navigate("/swap")}>
-					<IoSwapHorizontalSharp className="w-4 h-4" />
-				</Button>
+				<div className="text-center">
+					<Button variant="outline" className="h-10 w-10 p-0 rounded-full">
+						<IoIosArrowRoundUp className="w-5 h-5" />
+					</Button>
+					<p className="text-xs p-2 opacity-80">Send</p>
+				</div>
+				<div className="text-center">
+					<Button variant="outline" className="h-10 w-10 p-0 rounded-full" onClick={() => navigate("/receive")}>
+						<IoIosArrowRoundDown className="w-5 h-5" />
+					</Button>
+					<p className="text-xs p-2 opacity-80">Receive</p>
+				</div>
+				<div className="text-center">
+					<Button variant="outline" className="h-10 w-10 p-0 rounded-full" onClick={() => navigate("/swap")}>
+						<IoSwapHorizontalSharp className="w-4 h-4" />
+					</Button>
+					<p className="text-xs p-2 opacity-80">Swap</p>
+				</div>
 			</section>
 			<section className="my-8 w-full flex flex-col gap-2">
 				<TokenItem

@@ -11,8 +11,13 @@ import Activity from "./pages/Dashboard/component/Activity";
 import Explore from "./pages/Dashboard/component/Explore";
 import Receive from "./pages/Dashboard/component/Receive";
 import Swap from "./pages/Dashboard/component/Swap";
+import Auth from "./pages/Auth";
 
 const appRouter = createBrowserRouter([
+	{
+		path: "/unlock",
+		element: <Auth />,
+	},
 	{
 		path: "/setup",
 		element: <Setup />,
