@@ -1,9 +1,5 @@
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import Setup from "./pages/Setup";
-import Onboarding from "./pages/Setup/components/Onboarding";
-import Mnemonic from "./pages/Setup/components/Mnemonic";
-import SelectNetwork from "./pages/Setup/components/SelectNetwork";
-import CreatePassword from "./pages/Setup/components/CreatePassword";
 import Dashboard from "./pages/Dashboard";
 import Tokens from "./pages/Dashboard/component/Tokens";
 import Collectibles from "./pages/Dashboard/component/Collectibles";
@@ -21,24 +17,6 @@ const appRouter = createBrowserRouter([
 	{
 		path: "/setup",
 		element: <Setup />,
-		children: [
-			{
-				index: true,
-				element: <Onboarding />,
-			},
-			{
-				path: "network",
-				element: <SelectNetwork />,
-			},
-			{
-				path: "mnemonic",
-				element: <Mnemonic />,
-			},
-			{
-				path: "create-password",
-				element: <CreatePassword />,
-			},
-		],
 	},
 	{
 		path: "/",

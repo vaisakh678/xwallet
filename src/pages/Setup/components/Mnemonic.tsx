@@ -1,14 +1,11 @@
-import { Button } from "@/components/ui/button";
 import PhraseChip from "./ui/PhraseChip";
 import { Checkbox } from "@/components/ui/checkbox";
 import { generateMnemonic } from "bip39";
 import { useLayoutEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 interface MnemonicProps {}
 
 const Mnemonic: React.FC<MnemonicProps> = () => {
-	const navigate = useNavigate();
 	const [mnemonic, setMnemonic] = useState<string[]>([]);
 
 	useLayoutEffect(() => {
@@ -34,7 +31,6 @@ const Mnemonic: React.FC<MnemonicProps> = () => {
 					I saved my secret recovery phrase
 				</label>
 			</div>
-			<Button onClick={() => navigate("/setup/create-password")}>Next</Button>
 		</div>
 	);
 };

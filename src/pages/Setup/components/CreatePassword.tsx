@@ -1,15 +1,12 @@
-import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { IoEyeOutline } from "react-icons/io5";
 import { FaRegEyeSlash } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
 
 interface CreatePasswordProps {}
 
 const CreatePassword: React.FC<CreatePasswordProps> = () => {
-	const navigate = useNavigate();
 	const [togglePassword, setTogglePassword] = useState(false);
 
 	return (
@@ -43,7 +40,6 @@ const CreatePassword: React.FC<CreatePasswordProps> = () => {
 					Accept terms and conditions
 				</label>
 			</div>
-			<Button onClick={() => navigate("/")}>Next</Button>
 		</div>
 	);
 };

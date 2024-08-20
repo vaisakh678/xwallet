@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import NetworkItem from "./ui/NetworkItem";
 import { Separator } from "@/components/ui/separator";
@@ -39,7 +37,6 @@ const _networks = [
 const SelectNetwork: React.FC = () => {
 	const [networks, setNetworks] = useState(_networks);
 	const [selected, setSelected] = useState("");
-	const navigate = useNavigate();
 	return (
 		<>
 			<section className="text-center mb-8 mt-14">
@@ -74,9 +71,9 @@ const SelectNetwork: React.FC = () => {
 					</div>
 				</div>
 			</section>
-			<Button variant="default" onClick={() => navigate("/setup/mnemonic")}>
+			{/* <Button variant="default" onClick={() => navigate("/setup/mnemonic")}>
 				Continue
-			</Button>
+			</Button> */}
 		</>
 	);
 };

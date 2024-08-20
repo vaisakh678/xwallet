@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
 import OnboardingBtn from "./ui/OnboardingBtn";
-import { useNavigate } from "react-router-dom";
 import Bricks from "./ui/Bricks";
 
 const Onboarding: React.FC = () => {
 	const [opt, setOpt] = useState<0 | 1>(0);
-	const navigate = useNavigate();
 	return (
 		<>
 			<section className="text-center mb-28">
@@ -25,9 +22,6 @@ const Onboarding: React.FC = () => {
 					<Bricks />
 				</OnboardingBtn>
 			</section>
-			<Button variant="default" onClick={() => navigate("network")}>
-				Continue
-			</Button>
 		</>
 	);
 };
