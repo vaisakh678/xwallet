@@ -10,7 +10,7 @@ const CreatePassword: React.FC<CreatePasswordProps> = () => {
 	const [togglePassword, setTogglePassword] = useState(false);
 
 	return (
-		<div className="h-full flex items-center flex-col justify-center">
+		<>
 			<section className="text-center mb-28">
 				<h1 className="text-4xl font-semibold mb-4">It should be at least 8 characters.</h1>
 				<p className="opacity-90">You’ll need this to unlock Backpack</p>
@@ -40,7 +40,7 @@ const CreatePassword: React.FC<CreatePasswordProps> = () => {
 					Accept terms and conditions
 				</label>
 			</div>
-		</div>
+		</>
 	);
 };
 

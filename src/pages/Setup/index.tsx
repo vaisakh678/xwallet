@@ -22,11 +22,13 @@ const Setup: React.FC<SetupProps> = () => {
 			<div className="p-4 absolute top-0 right-0">
 				<ThemeToggleBtn />
 			</div>
-			{step === 0 ? <Onboarding /> : null}
-			{step === 1 ? <SelectNetwork /> : null}
-			{step === 2 ? <Mnemonic /> : null}
-			{step === 3 ? <CreatePassword /> : null}
-			<Button onClick={handleNext}>Continue</Button>
+			<div className="h-full flex items-center flex-col justify-center max-w-[800px] w-full">
+				{step === 0 ? <Onboarding /> : null}
+				{step === 1 ? <SelectNetwork /> : null}
+				{step === 2 ? <Mnemonic /> : null}
+				{step === 3 ? <CreatePassword /> : null}
+				<Button onClick={handleNext}>Continue</Button>
+			</div>
 		</div>
 	);
 };

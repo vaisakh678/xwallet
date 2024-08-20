@@ -12,7 +12,7 @@ const Mnemonic: React.FC<MnemonicProps> = () => {
 		setMnemonic(generateMnemonic().toString().split(" "));
 	}, []);
 	return (
-		<div className="h-full flex items-center flex-col justify-center">
+		<>
 			<section className="text-center mb-28">
 				<h1 className="text-4xl font-semibold mb-4">Secret Recovery Phrase</h1>
 				<p className="opacity-90">Save these words in a safe place.</p>
@@ -31,7 +31,7 @@ const Mnemonic: React.FC<MnemonicProps> = () => {
 					I saved my secret recovery phrase
 				</label>
 			</div>
-		</div>
+		</>
 	);
 };
 

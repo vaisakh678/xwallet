@@ -44,7 +44,7 @@ const SelectNetwork: React.FC = () => {
 				<p className="opacity-90">Backpack supports multiple blockchains.</p>
 				<p className="opacity-90">Which do you want to use? You can add more later.</p>
 			</section>
-			<section className="flex flex-col gap-2 mb-8 max-w-[500px] w-full">
+			<section className="flex flex-col gap-2 mb-8 w-full max-w-[500px]">
 				<Input
 					placeholder="Search Networks"
 					onChange={(e) => {
@@ -71,9 +71,6 @@ const SelectNetwork: React.FC = () => {
 					</div>
 				</div>
 			</section>
-			{/* <Button variant="default" onClick={() => navigate("/setup/mnemonic")}>
-				Continue
-			</Button> */}
 		</>
 	);
 };
