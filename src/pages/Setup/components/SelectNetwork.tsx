@@ -2,41 +2,18 @@ import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import NetworkItem from "./ui/NetworkItem";
 import { Separator } from "@/components/ui/separator";
+import { _networks } from "../../../utils/config";
+import { Button } from "../../../components/ui/button";
 
-const _networks = [
-	{
-		name: "Solana",
-		image: "https://s3.amazonaws.com/app-assets.xnfts.dev/images/network-logo-replacement-solana.png",
-	},
-	{
-		name: "Eclipse Dev Mainnet",
-		image: "https://s3.amazonaws.com/app-assets.xnfts.dev/images/logo-eclipse.svg",
-	},
-	{
-		name: "Ethereum",
-		image: "https://assets.coingecko.com/asset_platforms/images/279/large/ethereum.png",
-	},
-	{
-		name: "Polygon",
-		image: "https://assets.coingecko.com/coins/images/4713/large/polygon.png",
-	},
-	{
-		name: "Base",
-		image: "https://assets.coingecko.com/asset_platforms/images/131/large/base.jpeg",
-	},
-	{
-		name: "Arbitrum",
-		image: "https://s3.amazonaws.com/app-assets.xnfts.dev/images/network-logo-replacement-arbitrum.png",
-	},
-	{
-		name: "Optimism",
-		image: "https://assets.coingecko.com/coins/images/25244/large/Optimism.png",
-	},
-];
+interface SelectNetworkProps {
+	onSubmit?: React.MouseEventHandler;
+	network: { name: string; image: string; symbol: string; code: string } | null;
+	setNetwork: (props: { name: string; image: string; symbol: string; code: string } | null) => void;
+}
 
-const SelectNetwork: React.FC = () => {
+const SelectNetwork: React.FC<SelectNetworkProps> = ({ onSubmit, network, setNetwork }) => {
 	const [networks, setNetworks] = useState(_networks);
-	const [selected, setSelected] = useState("");
+
 	return (
 		<>
 			<section className="text-center mb-8 mt-14">
@@ -62,8 +39,8 @@ const SelectNetwork: React.FC = () => {
 						{networks.map((item, idx) => (
 							<NetworkItem
 								key={idx}
-								onClick={() => setSelected(item.name)}
-								active={item.name === selected}
+								onClick={() => setNetwork(item)}
+								active={item.name === network?.name}
 								name={item.name}
 								image={item.image}
 							/>
@@ -71,6 +48,7 @@ const SelectNetwork: React.FC = () => {
 					</div>
 				</div>
 			</section>
+			<Button onClick={onSubmit}>Next</Button>
 		</>
 	);
 };

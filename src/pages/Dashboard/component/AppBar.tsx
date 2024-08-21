@@ -11,6 +11,17 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Separator } from "../../../components/ui/separator";
 import { Link, useNavigate } from "react-router-dom";
+import { cn } from "../../../lib/utils";
+
+const WalletMenu = ({ className }: { className?: string }) => {
+	return (
+		<div className={cn("flex items-center", className)}>
+			<Separator className="h-8 mx-4" orientation="vertical" />
+			<div className="w-7 h-7 rounded-full bg-muted mr-2"></div>
+			<button className="select-none">Wallet 1</button>
+		</div>
+	);
+};
 
 const AppBar: React.FC = () => {
 	const navigate = useNavigate();
@@ -37,29 +48,23 @@ const AppBar: React.FC = () => {
 							<DropdownMenuItem className="cursor-pointer">Account 2</DropdownMenuItem>
 							<DropdownMenuItem className="cursor-pointer">Add Account</DropdownMenuItem>
 							<DropdownMenuSeparator />
-							<DropdownMenuItem className="cursor-pointer">Settings</DropdownMenuItem>
+							<DropdownMenuItem className="cursor-pointer" onClick={() => navigate("/settings")}>
+								Settings
+							</DropdownMenuItem>
 							<DropdownMenuSeparator />
 							<DropdownMenuItem className="cursor-pointer" onClick={() => navigate("/unlock")}>
 								Lock
 							</DropdownMenuItem>
 						</DropdownMenuContent>
 					</DropdownMenu>
-					<div className="items-center hidden md:flex">
-						<Separator className="h-8 mx-4" orientation="vertical" />
-						<div className="w-7 h-7 rounded-full bg-muted mr-2"></div>
-						<h3>Wallet 1</h3>
-					</div>
+					<WalletMenu className="hidden md:flex" />
 				</div>
 
 				<div className="flex justify-center items-center col-span-3 md:col-span-2">
 					<Link to="/">
 						<h1 className="text-2xl font-semibold">XWallet</h1>
 					</Link>
-					<div className="items-center flex md:hidden">
-						<Separator className="h-8 mx-4" orientation="vertical" />
-						<div className="w-7 h-7 rounded-full bg-muted mr-2"></div>
-						<h3>Wallet 1</h3>
-					</div>
+					<WalletMenu className="flex md:hidden" />
 				</div>
 
 				<div className="self-center justify-self-end col-span-1">

@@ -8,6 +8,7 @@ import Explore from "./pages/Dashboard/component/Explore";
 import Receive from "./pages/Dashboard/component/Receive";
 import Swap from "./pages/Dashboard/component/Swap";
 import Auth from "./pages/Auth";
+import Settings from "./pages/Dashboard/component/Settings";
 
 const appRouter = createBrowserRouter([
 	{
@@ -41,6 +42,10 @@ const appRouter = createBrowserRouter([
 			{
 				path: "explore",
 				element: <Explore />,
+			},
+			{
+				path: "settings",
+				element: <Settings />,
 			},
 			{
 				path: "receive",

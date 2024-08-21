@@ -3,10 +3,13 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { IoEyeOutline } from "react-icons/io5";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import { Button } from "../../../components/ui/button";
 
-interface CreatePasswordProps {}
+interface CreatePasswordProps {
+	onSubmit: (prps: { password: string }) => void;
+}
 
-const CreatePassword: React.FC<CreatePasswordProps> = () => {
+const CreatePassword: React.FC<CreatePasswordProps> = ({ onSubmit }) => {
 	const [togglePassword, setTogglePassword] = useState(false);
 
 	return (
@@ -31,7 +34,7 @@ const CreatePassword: React.FC<CreatePasswordProps> = () => {
 				</div>
 				<Input placeholder="Confirm Password" type="password" />
 			</section>
-			<div className="flex items-center space-x-2 mb-3">
+			<div className="flex items-center space-x-2 mb-8">
 				<Checkbox id="terms" />
 				<label
 					htmlFor="terms"
@@ -40,6 +43,7 @@ const CreatePassword: React.FC<CreatePasswordProps> = () => {
 					Accept terms and conditions
 				</label>
 			</div>
+			<Button onClick={() => onSubmit({ password: "123" })}>Create</Button>
 		</>
 	);
 };

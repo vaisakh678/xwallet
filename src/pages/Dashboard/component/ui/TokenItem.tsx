@@ -5,7 +5,7 @@ interface TokenItemProps extends IAssetDetails {}
 
 const TokenItem: React.FC<TokenItemProps> = ({ name, symbol, image, current_price, price_change_percentage_24h }) => {
 	return (
-		<div className="bg-muted cursor-pointer p-2 px-4 rounded-md flex items-center">
+		<div className="bg-muted cursor-pointer p-2 px-4 rounded-md flex items-center hover:opacity-90">
 			<img src={image} alt={symbol} className="w-12 h-12 mr-4 flex-shrink-0" />
 			<div className="flex justify-between w-full">
 				<div>
