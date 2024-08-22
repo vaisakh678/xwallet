@@ -7,6 +7,7 @@ import CreatePassword from "./components/CreatePassword";
 import { useNavigate } from "react-router-dom";
 import { generateMnemonic } from "bip39";
 import { useConfig } from "../../contexts/Config";
+import MnemonicInput from "./components/MnemonicInput";
 
 interface SetupProps {}
 export type TMode = "Create" | "Import";
@@ -17,7 +18,7 @@ const Setup: React.FC<SetupProps> = () => {
 	const [step, setStep] = useState(0);
 	const [network, setNetwork] = useState<{ name: string; image: string; symbol: string; code: string } | null>(null);
 	const [mode, setMode] = useState<TMode>("Create");
-	const [mnemonic] = useState<string>(() => generateMnemonic().toString());
+	const [mnemonic, setMnemonic] = useState<string>(() => generateMnemonic().toString());
 
 	const navigate = useNavigate();
 
@@ -51,7 +52,8 @@ const Setup: React.FC<SetupProps> = () => {
 			<div className="h-full flex items-center flex-col justify-center max-w-[800px] w-full">
 				{step === 0 ? <Onboarding onSubmit={handleNext} mode={mode} setMode={setMode} /> : null}
 				{step === 1 ? <SelectNetwork onSubmit={handleNext} network={network} setNetwork={setNetwork} /> : null}
-				{step === 2 ? <Mnemonic onSubmit={handleSubmit} mnemonic={mnemonic} /> : null}
+				{step === 2 && mode === "Create" ? <Mnemonic onSubmit={handleSubmit} mnemonic={mnemonic} /> : null}
+				{step === 2 && mode === "Import" ? <MnemonicInput onSubmit={handleSubmit} mnemonic={mnemonic} setMnemonic={setMnemonic} /> : null}
 				{step === 3 ? <CreatePassword onSubmit={handleSubmit} /> : null}
 			</div>
 		</div>
