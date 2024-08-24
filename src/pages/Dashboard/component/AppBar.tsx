@@ -12,6 +12,10 @@ import {
 import { Separator } from "../../../components/ui/separator";
 import { Link, useNavigate } from "react-router-dom";
 import { cn } from "../../../lib/utils";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../../redux/store";
+import { generateAlias } from "../../../utils/helpers";
+import { selectAccount } from "../../../redux/masterDataSlice";
 
 const WalletMenu = ({ className }: { className?: string }) => {
 	return (
@@ -25,7 +29,9 @@ const WalletMenu = ({ className }: { className?: string }) => {
 
 const AppBar: React.FC = () => {
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
 
+	const { accounts, activeAccount } = useSelector((store: RootState) => store.masterData);
 	return (
 		<div className="flex items-center justify-center mb-[60px]">
 			<div
@@ -39,14 +45,27 @@ const AppBar: React.FC = () => {
 					<DropdownMenu>
 						<DropdownMenuTrigger>
 							<Avatar>
-								<AvatarFallback>A1</AvatarFallback>
+								<AvatarFallback>{generateAlias(activeAccount?.name ?? "None")}</AvatarFallback>
 							</Avatar>
 						</DropdownMenuTrigger>
 						<DropdownMenuContent className="mx-4 w-[140px]">
-							<DropdownMenuItem className="cursor-pointer">Account 1</DropdownMenuItem>
+							<DropdownMenuItem className="cursor-pointer">{activeAccount?.name ?? "None"}</DropdownMenuItem>
 							<DropdownMenuSeparator />
-							<DropdownMenuItem className="cursor-pointer">Account 2</DropdownMenuItem>
-							<DropdownMenuItem className="cursor-pointer">Add Account</DropdownMenuItem>
+							{accounts.map((account) =>
+								activeAccount?.uuid === account.uuid ? null : (
+									<DropdownMenuItem
+										className="cursor-pointer"
+										onClick={() => {
+											dispatch(selectAccount({ uuid: account.uuid }));
+										}}
+									>
+										{account.name}
+									</DropdownMenuItem>
+								)
+							)}
+							<DropdownMenuItem className="cursor-pointer" onClick={() => navigate("/setup")}>
+								Add Account
+							</DropdownMenuItem>
 							<DropdownMenuSeparator />
 							<DropdownMenuItem className="cursor-pointer" onClick={() => navigate("/settings")}>
 								Settings

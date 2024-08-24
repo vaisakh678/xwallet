@@ -6,14 +6,18 @@ import Mnemonic from "./components/Mnemonic";
 import CreatePassword from "./components/CreatePassword";
 import { useNavigate } from "react-router-dom";
 import { generateMnemonic } from "bip39";
-import { useConfig } from "../../contexts/Config";
+// import { useConfig } from "../../contexts/Config";
 import MnemonicInput from "./components/MnemonicInput";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../redux/store";
+import { createAccountThunk } from "../../redux/masterDataSlice";
 
 interface SetupProps {}
 export type TMode = "Create" | "Import";
 
 const Setup: React.FC<SetupProps> = () => {
-	const { createAccount } = useConfig();
+	// const { createAccount } = useConfig();
+	const dispatch = useDispatch<AppDispatch>();
 
 	const [step, setStep] = useState(0);
 	const [network, setNetwork] = useState<{ name: string; image: string; symbol: string; code: string } | null>(null);
@@ -32,12 +36,9 @@ const Setup: React.FC<SetupProps> = () => {
 		});
 	};
 
-	const handleSubmit = () => {
+	const handleSubmit = async () => {
 		if (network) {
-			createAccount({
-				mnemonicEnc: mnemonic,
-				networks: [{ id: "none", name: network.name, symbol: network.symbol, uid: crypto.randomUUID(), wallets: [] }],
-			});
+			await dispatch(createAccountThunk({ mnemonic: mnemonic, symbol: "SOL" }));
 			navigate("/");
 		} else {
 			console.log("Something went wrong!.");
